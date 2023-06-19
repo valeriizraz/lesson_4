@@ -5,8 +5,7 @@ const converter = (money) => {
 
   const moneyChange = (eur) => {
     if (eur >= 1) {
-      eur = 73 * 1.2 * eur;
-      return 'Рубли';
+      return 73 * 1.2 * eur;
     }
   };
 
@@ -14,5 +13,5 @@ const converter = (money) => {
   return `${change}`;
 }
 
-const result = converter(15);
+const result = converter(5);
 console.log(result);

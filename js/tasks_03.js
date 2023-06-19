@@ -1,37 +1,21 @@
 'use strict'
 
-const calculate = (totalPrice, quantityOfGoods, promoCode) => {
+const myShop = (price, quantity, prom) => {
+  if (quantity >= 10) {
+    return price * 0.97;
+  }
+  if (price >= 30000) {
+    return price * 0.85;
+  }
+  if (prom === 'METHED') {
+    return price * 0.9;
+  }
+  if (prom === 'G3H2Z1' && price >= 2000) {
+    return price - 500; 
+  }  
+}  
 
-  const quantity = (quant) => {
-    if (quant >= 10) {
-      price *= 0.03;
-      return 'Общая цена';
-    }
-    console.log(totalPrice);
-  };
+const shop = myShop(500, 2, 'METHED');
+console.log(shop);
 
-  const quantityRes = quantity();
-
-  const totPrice = (price) => {
-    if (price >= 30000) {
-      totalPrice = price * 0.15;
-      return 'Общая цена';
-    }
-  };
-
-  const TPrice = totPrice();
-  console.log(totalPrice);
-
-  // const promoCd = () 
-
-
-
-
-
-
-
-    return `${totalPrice}`;
-}
-
-// const result = calculate(5000, 13, 'ndfk');
-// console.log(result); 
+// Если срабатывает больше 10 единиц товара, тоесть первое условие, то до второго условия не доходит, но второе условие дает больше скидку. Как то это не правильно. Как сделать правильно?
